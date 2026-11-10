@@ -3,243 +3,391 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>20/10 - Team 3 Tôm 1 Dế 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello Kitty tặng hoa điểm 10 🌸</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(145deg,#ffe2f0,#fff5d8,#fce0ff);
+  color: #b83275;
   overflow-x: hidden;
-  color: white;
-  font-family: "Segoe UI", Arial, sans-serif;
-  text-align: center;
-  background:
-    radial-gradient(circle at 50% 25%,
-      #ffcce4 0%, #ff82ba 35%,
-      #d84391 65%, #4c174f 100%);
-}
-
-main {
-  position: relative;
-  z-index: 2;
-  max-width: 540px;
-  margin: auto;
-  padding: 35px 18px 50px;
-}
-
-h1 {
-  font-size: clamp(27px, 7vw, 42px);
-  line-height: 1.45;
-  text-shadow: 0 0 12px #ff4f9a, 0 0 28px #fff;
-  animation: glow 2s infinite alternate;
-}
-
-.name {
-  margin-top: 22px;
-  font-size: clamp(27px, 7vw, 38px);
-  font-weight: bold;
-  line-height: 1.5;
-  color: #fff4ae;
-  text-shadow: 0 0 18px #ff1688;
-}
-
-.bouquet {
-  margin: 18px 0;
-  font-size: 100px;
-  filter: drop-shadow(0 0 20px #ff9ac9);
-  animation: sway 2s ease-in-out infinite alternate;
 }
 
 .card {
-  padding: 22px 18px;
-  border: 1px solid #ffffff90;
-  border-radius: 24px;
-  background: #ffffff20;
-  box-shadow: 0 0 30px #ffb3dc55;
-  backdrop-filter: blur(8px);
-  line-height: 1.9;
-  font-size: 17px;
+  width: min(850px,100%);
+  text-align: center;
+  padding: 25px 15px;
+  border: 3px solid white;
+  border-radius: 30px;
+  background: #ffffff99;
+  box-shadow: 0 18px 55px #d85b9633;
 }
 
-.card strong {
-  color: #fff4ae;
+h1 {
+  color: #ec4d98;
+  font-size: clamp(26px,5vw,43px);
 }
 
-button {
-  margin-top: 24px;
-  padding: 16px 23px;
-  border: none;
-  border-radius: 40px;
-  color: white;
-  background: linear-gradient(45deg, #ff267f, #ff82ba);
-  box-shadow: 0 5px 25px #ff4f9a88;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  animation: pulse 1.8s infinite;
+.subtitle { font-size: 17px; }
+
+.scene {
+  width: min(650px,100%);
+  margin: auto;
 }
 
-.footer {
-  margin-top: 22px;
-  font-size: 15px;
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.kitty {
+  transform-origin: 330px 500px;
+  animation: arrive 2s ease-out both,
+             bob 3s 2s ease-in-out infinite;
 }
 
 .flower {
+  transform-origin: 470px 250px;
+  animation: present 1.5s 1.5s ease-out both;
+}
+
+.sparkle {
+  animation: twinkle 1.5s infinite alternate;
+}
+
+.caption {
+  font-size: 28px;
+  font-weight: bold;
+  color: #e83f8d;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#ff75b4,#ed438e);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.rain {
   position: fixed;
-  top: -50px;
-  z-index: 1;
+  top: -30px;
   pointer-events: none;
-  animation: fall linear forwards;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translate(-100px,35px) scale(.7);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+  }
+}
+
+@keyframes bob {
+  0%,100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+
+@keyframes present {
+  from {
+    transform: rotate(-18deg) scale(.4);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  from { opacity: .3; }
+  to { opacity: 1; }
 }
 
 @keyframes fall {
   to {
-    transform: translate3d(var(--drift), 110vh, 0)
-      rotate(var(--rotate));
+    transform: translateY(110vh) rotate(500deg);
+    opacity: 0;
   }
-}
-
-@keyframes sway {
-  from { transform: rotate(-7deg) scale(1); }
-  to { transform: rotate(7deg) scale(1.08); }
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff4f9a; }
-  to { text-shadow: 0 0 25px #fff, 0 0 40px #ff4f9a; }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
 }
 </style>
 </head>
 
 <body>
-<main>
 
-  <div>🌷 🌸 🌹 🌸 🌷</div>
+<main class="card">
 
-  <h1>
-    HAPPY WOMEN'S DAY<br>
-    CHÚC MỪNG 20/10
-  </h1>
+<h1>🌸 BÔNG HOA ĐIỂM 10 🌸</h1>
+<p class="subtitle">Một món quà nhỏ xinh dành tặng bạn</p>
 
-  <div class="name">
-    💖 CHỊ EM TEAM 💖<br>
-    3 TÔM 1 DẾ<br>
-    🌷 ZIÊN &amp; THẢO 🌷
-  </div>
+<div class="scene">
 
-  <div class="bouquet">💐</div>
+<svg viewBox="0 0 660 560">
 
-  <div class="card">
-    <p>🌹 <strong>Gửi Ziên, Thảo và toàn thể chị em Team 3 Tôm 1 Dế!</strong> 🌹</p>
+<defs>
+  <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffd0e7"/>
+    <stop offset="1" stop-color="#f34d9d"/>
+  </linearGradient>
 
-    Nhân ngày Phụ nữ Việt Nam 20/10,
-    chúc các chị em luôn xinh đẹp, trẻ trung,
-    vui vẻ và rạng rỡ như những đóa hoa! 🌸
+  <linearGradient id="dress" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffacd2"/>
+    <stop offset="1" stop-color="#f45b9f"/>
+  </linearGradient>
 
-    <p>
-      💸 Tiền vào như nước, ví luôn đầy!<br>
-      💋 Nhan sắc thăng hạng mỗi ngày!<br>
-      💘 Tình duyên như ý, hạnh phúc ngập tràn!<br>
-      ✨ Công việc thuận lợi, may mắn ngập lối!
-    </p>
+  <radialGradient id="gold">
+    <stop offset="0" stop-color="#fff9a8"/>
+    <stop offset="1" stop-color="#ffbf25"/>
+  </radialGradient>
+</defs>
 
-    Đặc biệt chúc <strong>Ziên và Thảo</strong>
-    luôn xinh tươi, cười thật nhiều,
-    được yêu thương và nhận thật nhiều quà! 🎁
+<!-- NỀN VÀ TRÁI TIM -->
 
-    <p>
-      <strong>
-        💐 Chúc chị em mãi xinh, mãi đỉnh! 💐
-      </strong>
-    </p>
+<circle cx="330" cy="285" r="230"
+        fill="white" opacity=".4"/>
 
-    Mãi keo, mãi vui, mãi đoàn kết cùng
-    <strong>Team 3 Tôm 1 Dế</strong>! ❤️
-  </div>
+<g fill="#ff75b5">
+  <path class="sparkle"
+    d="M80 130 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z"/>
 
-  <button onclick="flowerRain(120)">
-    🌸 BẤM ĐỂ NHẬN NGÀN HOA 🌸
-  </button>
+  <path class="sparkle"
+    d="M555 95 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z"/>
 
-  <div class="footer">
-    ❤️ Thân gửi từ Team 3 Tôm 1 Dế ❤️<br>
-    🌹 Chúc mừng ngày 20/10 🌹
-  </div>
+  <path class="sparkle"
+    d="M115 370 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6z"/>
+</g>
+
+<g fill="#ff8fbd">
+  <path d="M150 190 C120 160 82 195 150 250 C218 195 180 160 150 190Z"/>
+  <path d="M520 185 C490 155 452 190 520 245 C588 190 550 155 520 185Z"/>
+</g>
+
+<!-- HELLO KITTY -->
+
+<g class="kitty">
+
+<!-- VÁY -->
+
+<path d="M220 340 Q330 300 430 345
+L470 475 Q335 520 195 475Z"
+fill="url(#dress)" stroke="#df438b" stroke-width="5"/>
+
+<path d="M205 465 Q330 490 465 465
+L480 488 Q335 535 190 488Z"
+fill="#fff0f7" stroke="#ee79ad" stroke-width="4"/>
+
+<g fill="#fff">
+  <path d="M275 430 q-12 -12 -23 0 q0 17 23 28 q23 -11 23 -28 q-11 -12 -23 0Z"/>
+  <path d="M375 430 q-12 -12 -23 0 q0 17 23 28 q23 -11 23 -28 q-11 -12 -23 0Z"/>
+</g>
+
+<!-- CHÂN -->
+
+<path d="M250 485 Q235 510 250 526 Q275 540 295 522 L300 490Z"
+fill="white" stroke="#d9a5bc" stroke-width="4"/>
+
+<path d="M365 490 L370 520 Q390 540 415 524 Q430 510 405 485Z"
+fill="white" stroke="#d9a5bc" stroke-width="4"/>
+
+<!-- ĐẦU -->
+
+<path d="M195 180 Q165 105 205 78
+Q240 62 270 105
+Q330 80 390 105
+Q420 65 455 83
+Q495 108 465 185
+Q495 240 465 300
+Q430 355 330 355
+Q225 355 190 300
+Q160 245 195 180Z"
+fill="white" stroke="#d7a7bc" stroke-width="5"/>
+
+<!-- TAI -->
+
+<path d="M195 145 Q180 91 213 91 Q239 95 250 130Z"
+fill="#ffd2e5"/>
+
+<path d="M405 130 Q430 87 457 96 Q477 110 455 155Z"
+fill="#ffd2e5"/>
+
+<!-- MẮT -->
+
+<ellipse cx="270" cy="235" rx="10" ry="17" fill="#382b35"/>
+<ellipse cx="390" cy="235" rx="10" ry="17" fill="#382b35"/>
+
+<!-- MŨI -->
+
+<ellipse cx="330" cy="263" rx="13" ry="9" fill="#f6bd32"/>
+
+<!-- RÂU -->
+
+<g stroke="#44333b" stroke-width="5"
+fill="none" stroke-linecap="round">
+
+<path d="M225 260 L175 248"/>
+<path d="M225 278 L172 282"/>
+<path d="M435 260 L485 248"/>
+<path d="M435 278 L488 282"/>
+
+</g>
+
+<!-- MÁ HỒNG -->
+
+<g fill="#ffb1c9">
+<ellipse cx="235" cy="275" rx="22" ry="11"/>
+<ellipse cx="425" cy="275" rx="22" ry="11"/>
+</g>
+
+<!-- NƠ HỒNG -->
+
+<path d="M365 105
+Q320 35 285 65
+Q270 100 320 120
+Q270 145 300 170
+Q330 190 365 130
+Q405 190 438 164
+Q462 135 405 115
+Q455 85 430 60
+Q395 45 365 105Z"
+fill="#ff5b9f" stroke="#e83c86" stroke-width="5"/>
+
+<circle cx="365" cy="117" r="18"
+fill="#ff9bc4" stroke="#e83c86" stroke-width="4"/>
+
+<!-- TAY -->
+
+<path d="M405 350 Q455 320 490 350
+Q510 370 490 390 Q460 405 425 385Z"
+fill="white" stroke="#d7a7bc" stroke-width="4"/>
+
+<path d="M220 355 Q190 370 205 395
+Q220 410 250 390 L275 365Z"
+fill="white" stroke="#d7a7bc" stroke-width="4"/>
+
+</g>
+
+<!-- BÔNG HOA ĐIỂM 10 -->
+
+<g class="flower">
+
+<!-- CUỐNG HOA -->
+
+<path d="M470 335 Q490 400 465 470"
+fill="none" stroke="#319b55"
+stroke-width="13" stroke-linecap="round"/>
+
+<!-- LÁ -->
+
+<path d="M470 420 Q420 390 405 430
+Q445 455 470 420Z"
+fill="#62c879" stroke="#319b55" stroke-width="3"/>
+
+<path d="M470 445 Q515 405 540 438
+Q510 472 470 445Z"
+fill="#62c879" stroke="#319b55" stroke-width="3"/>
+
+<!-- 6 CÁNH HOA -->
+
+<g transform="translate(470 250)"
+fill="url(#petal)"
+stroke="#e83d91"
+stroke-width="4">
+
+<ellipse cy="-72" rx="43" ry="62"/>
+<ellipse cy="-72" rx="43" ry="62" transform="rotate(60)"/>
+<ellipse cy="-72" rx="43" ry="62" transform="rotate(120)"/>
+<ellipse cy="-72" rx="43" ry="62" transform="rotate(180)"/>
+<ellipse cy="-72" rx="43" ry="62" transform="rotate(240)"/>
+<ellipse cy="-72" rx="43" ry="62" transform="rotate(300)"/>
+
+</g>
+
+<!-- NHỤY VÀNG -->
+
+<circle cx="470" cy="250" r="53"
+fill="url(#gold)" stroke="#f2a900" stroke-width="5"/>
+
+<text x="470" y="267"
+text-anchor="middle"
+font-size="55"
+font-weight="900"
+fill="#ed3e35"
+stroke="white"
+stroke-width="2"
+paint-order="stroke">10</text>
+
+<!-- NƠ BUỘC HOA -->
+
+<path d="M470 365
+Q435 335 420 360
+Q415 380 470 405
+Q525 380 520 360
+Q505 335 470 365Z"
+fill="#ff5b9f" stroke="#e83d91" stroke-width="3"/>
+
+</g>
+
+</svg>
+</div>
+
+<p class="caption">
+Tặng bạn bông hoa điểm 10! 💗
+</p>
+
+<p>
+Hello Kitty mang hoa đến tặng bạn.
+<br>
+Chúc bạn luôn vui vẻ và tỏa sáng!
+</p>
+
+<button onclick="rainHearts()">
+💖 NHẬN THÊM YÊU THƯƠNG
+</button>
 
 </main>
 
 <script>
-const flowers = [
-  "🌸", "🌹", "🌷", "🌺",
-  "💖", "💕", "✨", "💮", "🌼"
-];
+function rainHearts() {
 
-let activeFlowers = 0;
-const maxFlowers = 180;
+  const icons = ["💗","🌸","✨","💕","⭐"];
 
-function createFlower() {
-  if (activeFlowers >= maxFlowers) return;
+  for (let i = 0; i < 45; i++) {
 
-  const flower = document.createElement("div");
-  flower.className = "flower";
-  flower.textContent =
-    flowers[Math.floor(Math.random() * flowers.length)];
+    const el = document.createElement("span");
 
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.fontSize = (18 + Math.random() * 25) + "px";
+    el.className = "rain";
 
-  flower.style.setProperty(
-    "--drift",
-    (Math.random() * 180 - 90) + "px"
-  );
+    el.textContent =
+      icons[Math.floor(Math.random()*icons.length)];
 
-  flower.style.setProperty(
-    "--rotate",
-    (Math.random() * 900 - 450) + "deg"
-  );
+    el.style.left = Math.random()*100 + "vw";
 
-  const duration = 4 + Math.random() * 5;
-  flower.style.animationDuration = duration + "s";
-  flower.style.opacity = 0.6 + Math.random() * 0.4;
+    el.style.fontSize =
+      (16 + Math.random()*22) + "px";
 
-  document.body.appendChild(flower);
-  activeFlowers++;
+    el.style.animationDuration =
+      (3 + Math.random()*3) + "s";
 
-  setTimeout(() => {
-    flower.remove();
-    activeFlowers--;
-  }, duration * 1000 + 100);
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 6500);
+  }
 }
-
-function flowerRain(count) {
-  let created = 0;
-
-  const timer = setInterval(() => {
-    for (let i = 0; i < 4; i++) {
-      createFlower();
-    }
-
-    created += 4;
-
-    if (created >= count) {
-      clearInterval(timer);
-    }
-  }, 60);
-}
-
-// Hoa rơi liên tục khi mở trang
-setInterval(createFlower, 180);
-flowerRain(30);
 </script>
 
 </body>
